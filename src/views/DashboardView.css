@@ -1,0 +1,82 @@
+.dashboard-view-content {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: hidden; /* Hide vertical scroll */
+    width: 100%;
+    max-height: 100vh; /* Prevent going beyond the viewport height */
+    box-sizing: border-box; /* Ensure padding is considered within the height */
+}
+
+.wide-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it does not go off the screen */
+    box-sizing: border-box; /* Account for padding in width */
+}
+
+.wide-container-left {
+    flex: 1;
+}
+
+.wide-container-left h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.wide-container-left p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.get-started-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.get-started-button:hover {
+    background-color: #228b22;
+}
+
+.wide-container-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-image {
+    width: 300px;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sort-by {
+    display: flex;
+    align-items: center;
+}
+
+.sort-by label {
+    margin-right: 0.5rem;
+}
+
+.dashboard-section {
+    margin-bottom: 2rem;
+}
