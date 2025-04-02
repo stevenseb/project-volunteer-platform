@@ -1,8 +1,8 @@
 import React from 'react';
-import Card from '../components/Card'; // Import the Card component
-import dashboardIcon from '../assets/dashboard_icon.png'; // Icon for project updates
-import dashboardImage from '../assets/dashboard_image.png'; // The single dashboard image
-import './DashboardView.css'; // Styling for DashboardView
+import Card from '../components/Card';
+import dashboardIcon from '../assets/dashboard_icon.png';
+import dashboardImage from '../assets/dashboard_image.png';
+import './DashboardView.css';
 
 const DashboardView: React.FC = () => {
   return (
@@ -40,18 +40,21 @@ const DashboardView: React.FC = () => {
           info="Team Member 1 • Date 1"
           points={['Update Point 1', 'Update Point 2', 'Update Point 3']}
           icon={dashboardIcon}
+          buttonText="Open"
         />
         <Card
           title="Update Title 2"
           info="Team Member 2 • Date 2"
           points={['Update Point 1', 'Update Point 2', 'Update Point 3']}
           icon={dashboardIcon}
+          buttonText="Open"
         />
         <Card
           title="Update Title 3"
           info="Team Member 3 • Date 3"
           points={['Update Point 1', 'Update Point 2', 'Update Point 3']}
           icon={dashboardIcon}
+          buttonText="Open"
         />
       </section>
     </main>

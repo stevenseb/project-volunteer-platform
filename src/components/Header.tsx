@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import helpfulIcon from '../assets/helpful_icon.png';
+import profileIcon from '../assets/profile_icon.png';
 
 const Header: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const Header: React.FC = () => {
         <div className="nav-buttons">
           <button className="login-button">Login</button>
           <button className="signup-button">Sign Up</button>
+          <img src={profileIcon} alt="Profile Icon" className="profile-icon" />
         </div>
       </nav>
     </header>

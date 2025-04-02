@@ -6,9 +6,10 @@ interface CardProps {
   info: string;
   points: string[];
   icon: string;
+  buttonText: string; // Add a new parameter for the button text
 }
 
-const Card: React.FC<CardProps> = ({ title, info, points, icon }) => {
+const Card: React.FC<CardProps> = ({ title, info, points, icon, buttonText }) => {
   return (
     <div className="card">
       <div className="card-header">
@@ -22,7 +23,7 @@ const Card: React.FC<CardProps> = ({ title, info, points, icon }) => {
             <li key={index}>{point}</li>
           ))}
         </ul>
-        <button className="join-now-button">Join Now</button>
+        <button className="join-now-button">{buttonText}</button>
       </div>
     </div>
   );
