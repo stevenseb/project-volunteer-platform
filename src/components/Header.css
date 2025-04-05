@@ -1,0 +1,73 @@
+.header-container {
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.header-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+}
+
+.helpful-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5rem;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 0.5rem;
+}
+
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.login-button {
+  background-color: white;
+  color: #282c34;
+  border: 1px solid #282c34;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.signup-button {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+
