@@ -1,13 +1,11 @@
+// components/PublicHeader.tsx
 import React from 'react';
 import './Header.css';
 import helpfulIcon from '../assets/helpful_icon.png';
-import profileIcon from '../assets/profile_icon.png';
 import LoginButton from "../auth0/login";
-// import LogoutButton from "../auth0/logout";
 import SignupButton from "../auth0/signup";
-// import SignupPage from "../SignupPage";
 
-const Header: React.FC = () => {
+const PublicHeader: React.FC = () => {
   return (
     <header className="header-container">
       <nav className="header-nav">
@@ -21,13 +19,13 @@ const Header: React.FC = () => {
           <a href="#contact">Contact</a>
         </div>
         <div className="nav-buttons">
-          <LoginButton/>
-          <SignupButton/>
-          <img src={profileIcon} alt="Profile Icon" className="profile-icon" />
+          <LoginButton />
+          <SignupButton />
+          {/* No profile icon on public header */}
         </div>
       </nav>
     </header>
   );
 };
 
-export default Header;
+export default PublicHeader;
