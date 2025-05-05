@@ -1,30 +1,37 @@
-// src/utils/mockDB.ts
-type UserData = {
+// This file is used to mock a database using localStorage.
+// It provides functions to save and retrieve user data.
+export type UserData = {
     name: string;
-    skills: string;
-    phone: string;
-    slackHandle: string;
-    languages: string;
     timezone: string;
+    profession: string;
+    yearsOfExperience: string;
+    language: string;
+    skills: string[];
   };
   
-  export const mockDB = {
-    getSignupStatus: (userId: string): boolean => {
-      return localStorage.getItem(`user_${userId}_signupComplete`) === 'true';
-    },
-    
-    setSignupStatus: (userId: string, status: boolean): void => {
-      localStorage.setItem(`user_${userId}_signupComplete`, status.toString());
-    },
+  const STORAGE_KEY = "mockDB";
   
-    storeUserData: (userId: string, data: UserData): void => {
-      localStorage.setItem(`user_${userId}`, JSON.stringify(data));
-    },
+  // Helper to get the full DB object from localStorage
+  function getDB(): { [userId: string]: UserData } {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  }
   
-    getUserData: (userId: string): UserData | null => {
-      const data = localStorage.getItem(`user_${userId}`);
-      return data ? JSON.parse(data) : null;
-    }
-  };
+  // Save the full DB object back to localStorage
+  function setDB(db: { [userId: string]: UserData }) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(db));
+  }
   
+  // Save or update a user's data
+  export function saveUserData(userId: string, data: UserData) {
+    const db = getDB();
+    db[userId] = data;
+    setDB(db);
+  }
+  
+  // Retrieve a user's data
+  export function getUserData(userId: string): UserData | undefined {
+    const db = getDB();
+    return db[userId];
+  }
   

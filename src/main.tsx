@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import outputs from "../amplify_outputs.json";
 import { Auth0ProviderWithRedirect, ProtectedDashboard, ProtectedSignup } from "./components/RouteGuards";
 import LoginSignupRedirect from "./pages/LoginSignupRedirect";
+import BackNavigationFix from "./components/BackNavigationFix";
 
 Amplify.configure(outputs);
 
@@ -14,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Auth0ProviderWithRedirect>
       <BrowserRouter>
+      <BackNavigationFix />
         <Routes>
           <Route path="/signup" element={<ProtectedSignup />} />
           <Route path="/dashboard/*" element={<ProtectedDashboard />} />

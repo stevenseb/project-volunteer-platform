@@ -1,9 +1,8 @@
-import React from "react";
 import { useAuth0, Auth0Provider } from "@auth0/auth0-react";
 import { Navigate, useLocation, useSearchParams } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import SignupPage from "../pages/SignupPage";
-import { mockDB } from '../utils/mockDB';
+import { getUserData } from '../utils/mockDB';
 
 // Protects the dashboard route: only accessible if authenticated AND signup is complete
 export function ProtectedDashboard() {
@@ -17,10 +16,10 @@ export function ProtectedDashboard() {
     return <Navigate to="/" replace />;
   }
 
-  // Check if signup is complete (from mockDB only)
-  const signupComplete = mockDB.getSignupStatus(user.sub);
+  // Check if signup is complete using mockDB. Will need to hook up to our preferred DB for production
+  const userData = getUserData(user.sub);
 
-  if (!signupComplete) {
+  if (!userData) {
     // If signup not complete, redirect to /signup
     return <Navigate to="/signup" state={{ from: location }} replace />;
   }
@@ -55,14 +54,14 @@ export function ProtectedSignup() {
   }
 
   // If signup is already complete, redirect to dashboard
-  if (user?.sub && mockDB.getSignupStatus(user.sub)) {
+  if (user?.sub && getUserData(user.sub)) {
     return <Navigate to="/dashboard" state={{ from: location }} replace />;
   }
 
   return <SignupPage />;
 }
 
-// Auth0Provider wrapper for your app
+// Auth0Provider wrapper
 interface Auth0ProviderWithRedirectProps {
   children: React.ReactNode;
 }
