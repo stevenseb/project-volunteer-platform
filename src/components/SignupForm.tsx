@@ -7,11 +7,18 @@ import skills from "../data/skills";
 import timezones from "../data/timezones";
 import { SignupFormProps } from "../types/formTypes";
 import { customSelectStyles } from "./styles/selectStyles";
+import "./styles/signupForm.css";
 
 // Setup skills options for react-select
 const skillOptions = skills.map((skill) => ({
   value: skill,
   label: skill,
+}));
+
+// Setup language options for react-select
+const languageOptions = languages.map((language) => ({
+  value: language,
+  label: language,
 }));
 
 const yearsOfExperienceOptions = Array.from({ length: 81 }, (_, i) =>
@@ -44,7 +51,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
       !!formData.timezone &&
       !!formData.profession &&
       !!formData.yearsOfExperience &&
-      !!formData.language &&
+      formData.languages.length > 0 &&
       formData.skills.length > 0
     );
   };
@@ -127,23 +134,29 @@ const SignupForm: React.FC<SignupFormProps> = ({
                 ))}
               </select>
             </div>
+            {/* Languages with react-select */}
             <div className="form-group">
-              <label htmlFor="language">Preferred Language</label>
-              <select
-                className="form-control"
-                id="language"
-                name="language"
-                value={formData.language}
-                onChange={handleInputChange}
+              <label htmlFor="languages">Languages</label>
+              <Select
+                id="languages"
+                name="languages"
+                options={languageOptions}
+                value={formData.languages}
+                onChange={(selected) =>
+                  setFormData((prev) => ({
+                    ...prev,
+                    languages: selected as { value: string; label: string }[],
+                  }))
+                }
+                isMulti
+                placeholder="Select your languages..."
+                styles={customSelectStyles}
+                closeMenuOnSelect={false}
                 required
-              >
-                <option value="">Please select</option>
-                {languages.map((lang) => (
-                  <option key={lang} value={lang}>
-                    {lang}
-                  </option>
-                ))}
-              </select>
+              />
+              <small className="form-text">
+                Start typing to filter and select multiple languages.
+              </small>
             </div>
             {/* Skills with react-select */}
             <div className="form-group">

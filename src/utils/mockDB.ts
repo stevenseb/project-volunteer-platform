@@ -5,7 +5,7 @@ export type UserData = {
     timezone: string;
     profession: string;
     yearsOfExperience: string;
-    language: string;
+    languages: string[];
     skills: string[];
   };
   

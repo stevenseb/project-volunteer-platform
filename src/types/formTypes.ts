@@ -6,7 +6,7 @@ export interface FormData {
   timezone: string;
   profession: string;
   yearsOfExperience: string;
-  language: string;
+  languages: { value: string; label: string }[];
   skills: { value: string; label: string }[];
 }
 

@@ -19,7 +19,7 @@ const SignupPage: React.FC = () => {
     timezone: "",
     profession: "",
     yearsOfExperience: "",
-    language: "",
+    languages: [],
     skills: [],
   });
   const [submitting, setSubmitting] = useState<boolean>(false);
@@ -79,6 +79,7 @@ const SignupPage: React.FC = () => {
       if (user?.sub) {
         saveUserData(user.sub, {
           ...formData,
+          languages: formData.languages.map((s) => s.value),
           skills: formData.skills.map((s) => s.value),
         });
       }

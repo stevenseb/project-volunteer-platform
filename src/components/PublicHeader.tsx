@@ -1,4 +1,5 @@
-import "./styles/PublicHeader.css";
+import '../index.css';
+import "./styles/publicHeader.css";
 import helpfulIcon from "../assets/helpful_icon.png";
 import SignupButton from "../auth0/signup";
 

@@ -5,25 +5,25 @@ import { StylesConfig } from "react-select";
 export const customSelectStyles: StylesConfig<{ value: string; label: string }, true> = {
   control: (base, state) => ({
     ...base,
-    borderRadius: 28,
+    borderRadius: 10,
     borderColor: state.isFocused ? "#1F5378" : "#000",
     boxShadow: "none",
     minHeight: 56,
-    fontSize: "1.15rem",
+    fontSize: "1rem",
     paddingLeft: 2,
     "&:hover": { borderColor: "#1F5378" },
   }),
   multiValue: (base) => ({
     ...base,
-    backgroundColor: "#1F5378",
+    backgroundColor: "#F7F7FA",
     color: "#fff",
-    borderRadius: 16,
+    borderRadius: 10,
     padding: "2px 8px",
     alignItems: "center",
   }),
   multiValueLabel: (base) => ({
     ...base,
-    color: "#fff",
+    color: "#000",
     fontWeight: 500,
     padding: "0 6px",
   }),
@@ -31,7 +31,7 @@ export const customSelectStyles: StylesConfig<{ value: string; label: string }, 
     ...base,
     color: "#CD3333",
     ":hover": {
-      backgroundColor: "#fff",
+      backgroundColor: "darkgray",
       color: "#a80000",
     },
     fontSize: "1.1em",
@@ -42,4 +42,16 @@ export const customSelectStyles: StylesConfig<{ value: string; label: string }, 
     ...base,
     zIndex: 9999,
   }),
+
+  clearIndicator: (base) => ({
+  ...base,
+  cursor: "pointer",
+  color: "#CD3333",
+  padding: "8px",
+  ":hover": {
+    color: "#000",
+    backgroundColor: "#f0f0f0",
+  },
+}),
+
 };

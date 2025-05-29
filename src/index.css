@@ -13,15 +13,17 @@ body {
 }
 
 :root {
-    --primary: #1F5378;
-    --primary-hover: #18425F;
-    --secondary: #3B8223;
-    --secondary-hover: #2E5C1A;
+    --primary-btn: #1F5378;
+    --primary-btn-label: #FFFFFF;
+    --primary-btn-hover: #18425F;
+    --secondary-btn: #3B8223;
+    --secondary-btn-label: #FFFFFF;
+    --secondary-btn-hover: #2E5C1A;
     --link: #366ADA;
     --input-bg: #F7F7FA;
     --input-border: #000000;
-    --header-bg: #000000;
-    --header-text: #fff;
+    --header-bg: #EEF1F8;
+    --header-text: #000000;
     --success: #01B375;
     --warning: #E5A932;
     --error: #CD3333;

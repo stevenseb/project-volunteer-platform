@@ -6,9 +6,9 @@
   
   .signup-page .signup-form-container {
     background: transparent;
-    max-width: 480px;
+    max-width: 1080px;
     margin: 48px auto 0 auto;
-    padding: 0;
+    padding: 0 0 30px 0;
     border-radius: 0;
     box-shadow: none;
   }
@@ -18,9 +18,9 @@
     font-weight: 700;
     color: #000;
     text-align: center;
-    margin-bottom: 40px;
-    margin-top: 24px;
+    margin: 40px auto 24px auto;
     letter-spacing: -1px;
+    max-width: 95%;
   }
   
   .signup-page .signup-title .highlight {
@@ -54,7 +54,7 @@
   /* Input and select styling */
   .signup-page .signup-form .form-control {
     width: 100%;
-    border-radius: 28px;
+    border-radius: 10px;
     border: 2px solid #000;
     background: #fff;
     font-size: 1.15rem;
@@ -68,8 +68,8 @@
   }
   
   .signup-page .signup-form .form-control:focus {
-    border-color: #1F5378;
-    background: #f7f7fa;
+    border-color: #366ADA;
+    background: #F7F7FA;
   }
   
   .signup-page .signup-form .form-control::placeholder {
@@ -102,47 +102,6 @@
     gap: 10px;
   }
   
-  .signup-page .skills-select {
-    min-height: 90px;
-    max-height: 220px;
-  }
-  
-  .signup-page .selected-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 6px;
-  }
-  
-  .signup-page .skill-chip {
-    display: flex;
-    align-items: center;
-    background: #1F5378;
-    color: #fff;
-    border-radius: 16px;
-    padding: 5px 12px 5px 14px;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 4px;
-  }
-  
-  .signup-page .remove-skill {
-    background: transparent;
-    border: none;
-    color: #CD3333;
-    font-size: 1.1em;
-    margin-left: 10px;
-    cursor: pointer;
-    padding: 0 2px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .signup-page .remove-skill:hover,
-  .signup-page .remove-skill:focus {
-    color: #a80000;
-  }
-  
   /* Placeholder style for select */
   .signup-page .signup-form select.form-control:invalid {
     color: #9b9bae;
@@ -154,7 +113,7 @@
     max-width: 340px;
     display: block;
     margin: 32px auto 0 auto;
-    background: #1F5378;
+    background: #3B8223;
     border: none;
     border-radius: 14px;
     color: #fff;
@@ -241,4 +200,3 @@
       padding: 12px 16px;
     }
   }
-  
