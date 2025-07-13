@@ -12,7 +12,7 @@ const SignupButton = () => {
       });
   };
 
-  return <button onClick={handleSignup} className="signinup-button">Sign In/Up&nbsp;▼</button>;
+  return <button onClick={handleSignup} className="button signup-button">Sign Up</button>;
 };
 
 export default SignupButton;

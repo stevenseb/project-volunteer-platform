@@ -56,8 +56,8 @@ const SignupForm: React.FC<SignupFormProps> = ({
     );
   };
 
-  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLDivElement;
+  const handleScroll = (e: React.UIEvent<HTMLElement>) => {
+    const target = e.target as HTMLElement;
     const { scrollTop, scrollHeight, clientHeight } = target;
     if (scrollTop + clientHeight >= scrollHeight - 10) {
       setHasScrolledToBottom(true);
@@ -220,8 +220,12 @@ const SignupForm: React.FC<SignupFormProps> = ({
   onClose={() => setModalIsOpen(false)}
   hasScrolledToBottom={hasScrolledToBottom}
   onScroll={handleScroll}
-  onAccept={() => setHasReadTerms(true)}
+  onAccept={() => {
+    setHasReadTerms(true);
+    setTermsAccepted(true);
+  }}
 />
+
     </>
   );
 };

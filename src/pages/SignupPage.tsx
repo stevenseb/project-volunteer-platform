@@ -2,7 +2,7 @@ import { useState, FormEvent, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { saveUserData, getUserData } from "../utils/mockDB";
-import PublicHeader from "../components/PublicHeader";
+import Header from "../components/Header";
 import SignupForm from "../components/SignupForm";
 import "./styles/SignupPage.css";
 import { FormData } from "../types/formTypes";
@@ -98,7 +98,7 @@ const SignupPage: React.FC = () => {
 
   return (
     <div className="signup-page">
-      <PublicHeader />
+      <Header />
       <SignupForm
         formData={formData}
         setFormData={setFormData}

@@ -1,7 +1,7 @@
 .header-container {
   width: 100%;
-  background-color: var(--header-bg);
-  color: var(--header-text);
+  background: var(--header-bg, #fff);
+  color: var(--header-text, #222);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -11,20 +11,20 @@
 
 .header-nav {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: center;  /* Vertically center all items */
   width: 100%;
   max-width: 1800px;
   margin: 0 auto;
   height: 70px;
   padding: 0 32px;
+  box-sizing: border-box;
 }
 
 .logo-section {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-  }
-  
+  display: flex;
+  align-items: center;
+}
 
 .helpful-icon {
   width: 40px;
@@ -36,7 +36,7 @@
   font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 2px;
-  color: var(--header-text);
+  color: var(--header-text, #222);
   text-decoration: none;
 }
 
@@ -44,12 +44,12 @@
   display: flex;
   align-items: center;
   gap: 2.2rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 24px;    /* space between logo and links */
+  margin-right: auto;   /* pushes nav-buttons to the right */
 }
 
 .nav-links a {
-  color: var(--header-text);
+  color: var(--header-text, #222);
   text-decoration: none;
   font-size: 1.08rem;
   font-weight: 600;
@@ -65,14 +65,19 @@
   border-bottom: 2px solid #E5A932;
 }
 
-.header-actions {
+.nav-buttons {
   display: flex;
   align-items: center;
   gap: 1.1rem;
-  flex: 0 0 auto;
 }
 
-.donate-button {
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  margin-left: 8px;
+}
+
+.signup-button {
   background-color: #3B8223;
   color: #fff;
   border: none;
@@ -82,32 +87,29 @@
   padding: 0.6rem 1.4rem;
   cursor: pointer;
   transition: background 0.15s;
-  margin-right: 8px;
 }
 
-.donate-button:hover,
-.donate-button:focus {
+.signup-button:hover,
+.signup-button:focus {
   background-color: #2E5C1A;
 }
 
-.signinup-button {
-  background: #fff;
-  color: #000;
-  border: 2px solid #1F5378;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 1.03rem;
-  padding: 0.6rem 1.4rem;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+@media (max-width: 900px) {
+  .header-nav {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    align-items: flex-start;
+  }
+  .nav-links {
+    margin: 16px 0 0 0;
+    gap: 1.2rem;
+  }
+  .nav-buttons {
+    margin-top: 12px;
+  }
 }
 
-.signinup-button:hover,
-.signinup-button:focus {
-  background: #E5A932;
-  color: #1F5378;
-  border-color: #E5A932;
-}
 
 /* Responsive: Stack nav on mobile */
 /* @media (max-width: 900px) {
