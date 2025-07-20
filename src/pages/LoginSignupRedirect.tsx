@@ -1,7 +1,8 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Navigate } from "react-router-dom";
-import PublicHeader from "../components/PublicHeader";
-import { getUserData } from "../utils/mockDB"; // Updated import
+import Header from "../components/Header.tsx";
+import { getUserData } from "../utils/mockDB"; 
+import './styles/LoginSignupRedirect.css';
 
 export default function LoginSignupRedirect() {
   const { isAuthenticated, isLoading, user } = useAuth0();
@@ -22,7 +23,7 @@ export default function LoginSignupRedirect() {
   // Public landing page
   return (
     <div className="public-landing">
-      <PublicHeader />
+      <Header />
       <div className="welcome-content">
         <h1>Welcome to Our Platform</h1>
         <p>Get started by logging in or signing up</p>

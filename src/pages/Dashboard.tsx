@@ -3,7 +3,7 @@ import './styles/Dashboard.css';
 import Header from '../components/Header.tsx';
 import MyProjects from '../views/MyProjects';
 import Opportunities from '../views/Opportunities';
-import DashboardView from '../views/DashboardView'; // Import the new DashboardView component
+import DashboardView from '../views/DashboardView'; 
 
 // Importing icons for sidebar
 import dashboardIcon from '../assets/dashboard_icon.png';
