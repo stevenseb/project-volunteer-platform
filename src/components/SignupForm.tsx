@@ -6,8 +6,8 @@ import languages from "../data/languages";
 import skills from "../data/skills";
 import timezones from "../data/timezones";
 import { SignupFormProps } from "../types/formTypes";
-import { customSelectStyles } from "./styles/selectStyles";
 import "./styles/signupForm.css";
+import { customSelectStyles } from "./styles/selectStyles";
 
 // Setup skills options for react-select
 const skillOptions = skills.map((skill) => ({
@@ -75,7 +75,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
-                className="form-control"
+                className="custom-form-control"
                 type="text"
                 id="name"
                 name="name"
@@ -88,7 +88,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <div className="form-group">
               <label htmlFor="timezone">Time Zone</label>
               <select
-                className="form-control"
+                className="custom-form-control"
                 id="timezone"
                 name="timezone"
                 value={formData.timezone}
@@ -106,7 +106,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <div className="form-group">
               <label htmlFor="profession">Current Profession</label>
               <input
-                className="form-control"
+                className="custom-form-control"
                 type="text"
                 id="profession"
                 name="profession"
@@ -119,7 +119,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <div className="form-group">
               <label htmlFor="yearsOfExperience">Years of Experience</label>
               <select
-                className="form-control"
+                className="custom-form-control"
                 id="yearsOfExperience"
                 name="yearsOfExperience"
                 value={formData.yearsOfExperience}
@@ -185,6 +185,14 @@ const SignupForm: React.FC<SignupFormProps> = ({
           </div>
           <div className="form-group terms-group">
             <Button
+            type="submit"
+            disabled={!termsAccepted || submitting || !validateForm()}
+            variant="primary"
+            className="submit-btn"
+          >
+            {submitting ? "Saving..." : "Save"}
+          </Button>
+            <Button
               variant="link"
               type="button"
               className="terms-link"
@@ -204,15 +212,7 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <label htmlFor="termsAccepted">
               I accept the terms and conditions
             </label>
-          </div>
-          <Button
-            type="submit"
-            disabled={!termsAccepted || submitting || !validateForm()}
-            variant="primary"
-            className="submit-btn"
-          >
-            {submitting ? "Saving..." : "Save"}
-          </Button>
+          </div>          
         </form>
       </div>
       <TermsModal

@@ -37,7 +37,7 @@ const TermsModal = ({
     >
       <Modal.Body
         onScroll={onScroll}
-        style={{ maxHeight: "60vh", overflowY: "auto" }}
+        style={{ maxHeight: "60vh", overflowY: "auto", padding: "1.8rem" }}
       >
         <ReactMarkdown>{markdown}</ReactMarkdown>
       </Modal.Body>
