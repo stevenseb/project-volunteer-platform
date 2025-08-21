@@ -17,7 +17,7 @@ export const customSelectStyles: StylesConfig<{ value: string; label: string }, 
   }),
   multiValue: (base) => ({
     ...base,
-    backgroundColor: "#F7F7FA",
+    backgroundColor: "#f2f3f0ff",
     color: "#fff",
     borderRadius: 10,
     padding: "2px 8px",
