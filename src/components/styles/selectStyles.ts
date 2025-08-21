@@ -5,8 +5,9 @@ import { StylesConfig } from "react-select";
 export const customSelectStyles: StylesConfig<{ value: string; label: string }, true> = {
   control: (base, state) => ({
     ...base,
-    border: "px solid black",
-    borderRadius: 4,
+    border: ".5px solid black",
+    backgroundColor: "#f8f9fb",
+    borderRadius: 10,
     borderColor: state.isFocused ? "#1F5378" : "#000",
     boxShadow: "none",
     minHeight: 56,

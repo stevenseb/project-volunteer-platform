@@ -1,29 +1,54 @@
-/* Form container - 75% width and responsive */
-.signup-form-container {
-  width: 75%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
+/* SignupForm.css */
 
-/* Form field background color and padding */
-.custom-form-control {
-  border: .5px solid black;
-  border-radius: 10px;
-  min-height: 56px;
-  padding: 0 12px;
-  font-size: 1rem;
-  line-height: 56px;
-  box-sizing: border-box;
+/* Form container */
+.signup-form {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.custom-form-control:invalid {
+/* Each form group */
+.signup-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding-bottom: 0;
+  margin-bottom: 14px;
   color: #a0a0a0;
 }
 
-.custom-form-control::placeholder {
+/* Labels */
+.signup-form label {
+  font-size: 1.07rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 0;
+  margin-left: 8px;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Inputs and Selects */
+.signup-form .custom-form-control {
+  width: 100%;
+  border-radius: 10px;
+  border: 0.5px solid black;
+  background: none;
+  font-size: 1rem;
+  padding: 0 12px;
+  min-height: 56px;
+  line-height: 56px;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+.signup-form .custom-form-control:invalid {
+  color: #a0a0a0;
+}
+
+.signup-form .custom-form-control::placeholder {
   color: #a0a0a0;
   font-size: 1rem;
   font-weight: 400;
@@ -31,39 +56,150 @@
   line-height: 56px;
 }
 
-/* Add bottom padding to each form group */
-.form-group {
-  padding-bottom: 0;
-  margin-bottom: 14px;
-  color: #a0a0a0;
-}
+/* Down arrow for select */
+.signup-form select.custom-form-control {
+  /* Hide native dropdown arrow */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
-.terms-group {
-  margin: 0px;
-  padding: 0px;
-}
+  /* Custom arrow using inline SVG as background */
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 7L13 1' stroke='%23c7c7c1' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px 8px;
 
-.signup-form {
-  width: 100%;
-}
-
-.signup-form-fields .form-control {
-  width: 100%;
+  padding-right: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 0.5px solid rgb(180, 178, 178);
+  min-height: 56px;
+  font-size: 1rem;
   box-sizing: border-box;
+  color: inherit;
+  background-color: transparent; 
 }
 
+/* multi-select remove arrow */
+.signup-form select.custom-form-control[multiple] {
+  background-image: none;
+  height: 56px;
+  min-height: 56px;
+  padding-right: 24px;
+}
 
-/* Responsive adjustments */
+/* Placeholder style for select */
+.signup-form select.custom-form-control:invalid {
+  color: #9b9bae;
+}
+
+/* Skills select container */
+.skills-select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Submit button */
+.submit-btn {
+  background-color: var(--secondary-btn);
+  color: var(--secondary-btn-label);
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding: 14px 64px;
+  width: 100%;
+  max-width: 340px;
+  display: block;
+  margin-top: -12px;
+  letter-spacing: 0.01em;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--secondary-btn-hover);
+  color: var(--secondary-btn-label);
+}
+
+.submit-btn:disabled {
+  background: #a2c495;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+/* Terms link */
+.terms-link {
+  background: none;
+  color: var(--link);
+  border: none;
+  padding: 0;
+  margin-top: 32px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.18s;
+  border-radius: 0;
+}
+
+.terms-link:hover,
+.terms-link:focus {
+  color: #18425f;
+  text-decoration: underline;
+}
+
+/* Terms and checkbox */
+.terms-group {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  margin-top: 10px;
+}
+
+/* Form text */
+.form-text {
+  color: #666;
+  font-size: 0.95rem;
+  margin-top: 6px;
+  margin-left: 8px;
+}
+
+/* Modal */
+.modal-content {
+  border-radius: 12px;
+}
+
+.modal-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.modal-footer {
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-  .signup-form-container {
-    width: 90%; /* Wider on mobile devices */
-    padding: 15px;
+  .signup-form .submit-btn {
+    font-size: 1.1rem;
+    padding: 14px 0;
   }
-}
 
-@media (max-width: 480px) {
-  .signup-form-container {
-    width: 95%;
-    padding: 10px;
+  .signup-form .custom-form-control {
+    font-size: 1rem;
+    padding: 12px 16px;
   }
 }

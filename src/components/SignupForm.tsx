@@ -1,13 +1,12 @@
 import { useState, ChangeEvent } from "react";
 import Select from "react-select";
-import Button from "react-bootstrap/Button";
-import TermsModal from "./TermsModal"; 
+import TermsModal from "./TermsModal";
 import languages from "../data/languages";
 import skills from "../data/skills";
 import timezones from "../data/timezones";
 import { SignupFormProps } from "../types/formTypes";
-import "./styles/signupForm.css";
 import { customSelectStyles } from "./styles/selectStyles";
+import "./styles/signupForm.css";
 
 // Setup skills options for react-select
 const skillOptions = skills.map((skill) => ({
@@ -34,7 +33,8 @@ const SignupForm: React.FC<SignupFormProps> = ({
 }) => {
   const [termsAccepted, setTermsAccepted] = useState<boolean>(false);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
-  const [hasScrolledToBottom, setHasScrolledToBottom] = useState<boolean>(false);
+  const [hasScrolledToBottom, setHasScrolledToBottom] =
+    useState<boolean>(false);
   const [hasReadTerms, setHasReadTerms] = useState<boolean>(false);
 
   const handleInputChange = (
@@ -67,7 +67,8 @@ const SignupForm: React.FC<SignupFormProps> = ({
   return (
     <>
       <h1 className="signup-title">
-        Welcome <span className="highlight">{userName || "!"}</span>! Tell us more about you
+        Welcome <span className="highlight">{userName || "!"}</span>! Tell us
+        more about you
       </h1>
       <div className="signup-form-container">
         <form className="signup-form" onSubmit={onSubmit} autoComplete="off">
@@ -184,22 +185,20 @@ const SignupForm: React.FC<SignupFormProps> = ({
             </div>
           </div>
           <div className="form-group terms-group">
-            <Button
-            type="submit"
-            disabled={!termsAccepted || submitting || !validateForm()}
-            variant="primary"
-            className="submit-btn"
-          >
-            {submitting ? "Saving..." : "Save"}
-          </Button>
-            <Button
-              variant="link"
+            <button
+              type="submit"
+              disabled={!termsAccepted || submitting || !validateForm()}
+              className="submit-btn"
+            >
+              {submitting ? "Saving..." : "Save"}
+            </button>
+            <button
               type="button"
               className="terms-link"
               onClick={() => setModalIsOpen(true)}
             >
               Read Full Terms
-            </Button>
+            </button>
           </div>
           <div className="form-group checkbox-group">
             <input
@@ -212,20 +211,19 @@ const SignupForm: React.FC<SignupFormProps> = ({
             <label htmlFor="termsAccepted">
               I accept the terms and conditions
             </label>
-          </div>          
+          </div>
         </form>
       </div>
       <TermsModal
-  isOpen={modalIsOpen}
-  onClose={() => setModalIsOpen(false)}
-  hasScrolledToBottom={hasScrolledToBottom}
-  onScroll={handleScroll}
-  onAccept={() => {
-    setHasReadTerms(true);
-    setTermsAccepted(true);
-  }}
-/>
-
+        isOpen={modalIsOpen}
+        onClose={() => setModalIsOpen(false)}
+        hasScrolledToBottom={hasScrolledToBottom}
+        onScroll={handleScroll}
+        onAccept={() => {
+          setHasReadTerms(true);
+          setTermsAccepted(true);
+        }}
+      />
     </>
   );
 };
